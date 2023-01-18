@@ -17,13 +17,13 @@ namespace DockedPanelApp
         public MainForm()
         {
             InitializeComponent();
-
-            this.mainDockPanel = new DockPanel();
-            this.mainDockPanel.Dock = DockStyle.Fill;
             this.mainDockPanel.Theme = new VS2015DarkTheme();
 
             ShowDockContent();
 
+            this.mainDockPanel = new DockPanel();
+            this.mainDockPanel.Dock = DockStyle.Fill;
+            
             this.Controls.Add(this.mainDockPanel);
             
         }
@@ -32,7 +32,7 @@ namespace DockedPanelApp
         public void ShowDockContent()
         {
             var dockContent = new MenuContent();
-            dockContent.Show(this.mainDockPanel, DockState.Document);
+            dockContent.Show(this.mainDockPanel, DockState.DockLeft);
 
             var dockContent2 = new MenuContent();
             dockContent2.Show(this.mainDockPanel, DockState.Document);
